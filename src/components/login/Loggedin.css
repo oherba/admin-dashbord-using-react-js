@@ -1,0 +1,111 @@
+.admn{
+    /* ?position: absolute; */
+    width: 460px;
+    height: 55px;
+    /* left: 143px;
+    top: 119px; */
+
+    font-family: Rokkitt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 55px;
+
+    color: rgba(0, 0, 0, 0.46);
+}
+
+.logout{
+    /* position: absolute; */
+    width: 495px;
+    height: 41px;
+    /* left: 143px;
+    top: 221px; */
+
+    font-family: Rokkitt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 41px;
+    color: rgba(0, 0, 0, 0.46);
+}
+
+.bienvenu{
+    /* position: absolute; */
+    width: 328px;
+    height: 34px;
+    /* left: 146px;
+    top: 325px; */
+
+    font-family: Rokkitt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: rgba(0, 0, 0, 0.46);
+}
+
+.base-container {
+    width:100%;
+    display:  flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 120px;
+    margin-top: 90px;
+}
+
+.bar {
+    left: 200px;
+    top: 350px;
+}
+
+/* 
+h4{
+    margin-top: 20px;
+} */
+
+h1, h3,h4, ul{
+    width: 100%;
+    text-align: left;
+    margin: 25px 0px;
+  }
+
+li{
+    width: 150px;
+    /* height: 45px; */
+    background: #DCDDE1;
+    border-radius: 2px;
+    /* padding-right: 10px; */
+    /* padding: 0 10px 0 20px; */
+
+}
+
+a{
+    color: #62C7FD;
+}
+
+hr{
+    /* position: absolute; */
+    width: 1297px;
+    height: 0px;
+    left: 131px;
+    top: 463px;
+
+    border: 2px solid #DCDDE1;
+    transform: rotate(0.01deg);
+}
+
+.medcin{
+    width: 73px;
+    height: 75px;
+    left:0x;
+    top: 0px;
+
+    border-radius: 50%;
+    border: 2px solid#0097E6;
+    box-sizing: border-box;
+}
+
+.line{
+    border-bottom: 2px solid #DCDDE1 ;
+    margin-right: 10px;
+}
