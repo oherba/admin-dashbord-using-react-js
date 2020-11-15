@@ -6,7 +6,7 @@ import Loggedin from './components/login/Loggedin.jsx';
 function App() {
     return (
       <div className="App">
-        <Loggedin/>
+        <Login/>
       </div>
     );
 }

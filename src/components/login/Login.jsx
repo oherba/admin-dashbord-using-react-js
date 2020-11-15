@@ -8,12 +8,12 @@ function Login(props) {
     
     return (
         <div className="base-container">
-            <div class="split right ">
+            <div className="split right ">
                 <div className="centered">
                     <img className="image" alt="logo" src={process.env.PUBLIC_URL + 'logo_um6p.jpg'} />
                 </div>    
             </div>
-            <div class="split  left ">
+            <div className="split  left ">
                 <div className= " centered">
                     <div className="header">Administarteur System</div>
                     <div className="label-div">
@@ -25,11 +25,11 @@ function Login(props) {
                     </div>
                     <input className="passwordInput" type="text" name="password" ></input>
                     <div className="checkBox">
-                        <input  type="checkbox" checked id="checkbox" name="remember"></input>
-                        <label for="checkbox" >Remember me</label>
+                        <input  type="checkbox"  id="checkbox" name="remember"></input>
+                        <label htmlFor="checkbox" >Remember me</label>
                     </div>
                     <div className="btn-div">
-                        <button className="sublog" type="button" >Login</button>
+                        <button  className="sublog" type="button" onClick={handleSubmitClick} >Login</button>
                     </div>
                     
                 </div>
@@ -37,6 +37,12 @@ function Login(props) {
         </div>
     )
 }
+
+const validate = e => {
+    
+  }
+
+
 
 const useFormInput = initialValue => {
     const [value, setValue] = useState(initialValue);
@@ -49,4 +55,11 @@ const useFormInput = initialValue => {
       onChange: handleChange
     }
   }
+  
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+        console.log("anan banana");
+        validate();
+        // sendDetailsToServer()    
+}
 export default Login
