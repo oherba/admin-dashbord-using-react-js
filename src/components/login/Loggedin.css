@@ -1,9 +1,6 @@
 .admn{
-    /* ?position: absolute; */
     width: 460px;
     height: 55px;
-    /* left: 143px;
-    top: 119px; */
 
     font-family: Rokkitt;
     font-style: normal;
@@ -58,10 +55,6 @@
     top: 350px;
 }
 
-/* 
-h4{
-    margin-top: 20px;
-} */
 
 h1, h3,h4, ul{
     width: 100%;
@@ -71,41 +64,38 @@ h1, h3,h4, ul{
 
 li{
     width: 150px;
-    /* height: 45px; */
     background: #DCDDE1;
     border-radius: 2px;
-    /* padding-right: 10px; */
-    /* padding: 0 10px 0 20px; */
-
 }
 
 a{
     color: #62C7FD;
 }
 
-hr{
-    /* position: absolute; */
-    width: 1297px;
-    height: 0px;
-    left: 131px;
-    top: 463px;
-
-    border: 2px solid #DCDDE1;
-    transform: rotate(0.01deg);
-}
 
 .medcin{
-    width: 73px;
-    height: 75px;
-    left:0x;
-    top: 0px;
+    width: 60px;
+    height: 60px;
+    /* left:0x;
+    top: 0px; */
 
     border-radius: 50%;
     border: 2px solid#0097E6;
-    box-sizing: border-box;
+    box-sizing: 10px;
 }
 
 .line{
     border-bottom: 2px solid #DCDDE1 ;
     margin-right: 10px;
 }
+
+.child-1 {
+    position: absolute;
+    top: 5px;
+    left: 10%;
+  }
+  .card {
+    margin: 10px;
+    border-bottom: 2px solid #DCDDE1 ;
+    border-top: 2px solid #DCDDE1 ;
+  }

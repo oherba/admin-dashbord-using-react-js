@@ -1,19 +1,24 @@
 import './Login.css'
 import React, { useState } from 'react';
-import axios from 'axios';
+const http = require('../../http')
 
     function login(email,pass)
     {
-        axios.post('http://10.1.33.255:8080/api/login', {
-            email: email,
-            password: pass
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        const data = {email:email,password:pass}
+        const loginUrl = 'https://idbella.herokuapp.com/api/login'
+        http('POST', loginUrl, data, (status, response) => {
+            if (status === 404)
+                console.log("invalid email/password")
+            if (status === 500)
+                console.log('server error try again')
+            if (status === 400)
+                console.log('invalid request data')
+            if (status === 200)
+                console.log(`user ${email} is logged in`)
+            if (status === 401)
+                console.log('an active session is already started [user is logged in]')
+            console.log(response)
+        })
     }
 
     function click(){
@@ -38,6 +43,7 @@ import axios from 'axios';
         const emailerr = email.length < 5
         return (callback({email:emailerr,password:passerr}))
     }
+
 function Login(props) {
     
 
