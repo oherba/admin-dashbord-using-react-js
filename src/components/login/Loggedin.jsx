@@ -23,22 +23,53 @@ function Loggedin() {
                 </li>
                
             </ul>
-            <div className="row">
-                <div className="col-lg-3 col-sm-6">
-                    <div className="card">
-                        <div className="child-1">
-                            <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
-                        </div>
-                            <div className="col-xs-7">
-                              <p>10 <br/><strong>Medecin</strong> </p>	
-                            								
+            <div className="d-board">
+                <div className="row">
+                    <div className="col-lg-3 col-sm-6">
+                        <div className="card">
+                            <div className="child-1">
+                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
                             </div>
-                            <hr></hr>
-                        </div>
-                    
-                </div>    	
-            </div>	
-
+                                <div>
+                                <p className="docNmbr">10</p> 	
+                                <p><strong>Medecin</strong> </p> 							
+                                </div>
+                                <hr></hr>
+                            </div>
+                        
+                    </div>    	
+                </div>
+                <div className="row">
+                    <div className="col-lg-3 col-sm-6">
+                        <div className="card">
+                            <div className="child-1">
+                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
+                            </div>
+                                <div>
+                                <p className="docNmbr">10</p> 	
+                                <p><strong>Medecin</strong> </p> 							
+                                </div>
+                                <hr></hr>
+                            </div>
+                        
+                    </div>    	
+                </div>
+                <div className="row">
+                    <div className="col-lg-3 col-sm-6">
+                        <div className="card">
+                            <div className="child-1">
+                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
+                            </div>
+                                <div>
+                                <p className="docNmbr">10</p> 	
+                                <p><strong>Medecin</strong> </p> 							
+                                </div>
+                                <hr></hr>
+                            </div>
+                        
+                    </div>    	
+                </div>	
+            </div>
             
         </div>
     )
