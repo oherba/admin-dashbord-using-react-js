@@ -12,12 +12,8 @@
 }
 
 .logout{
-    /* position: absolute; */
     width: 495px;
     height: 41px;
-    /* left: 143px;
-    top: 221px; */
-
     font-family: Rokkitt;
     font-style: normal;
     font-weight: normal;
@@ -27,12 +23,8 @@
 }
 
 .bienvenu{
-    /* position: absolute; */
     width: 328px;
     height: 34px;
-    /* left: 146px;
-    top: 325px; */
-
     font-family: Rokkitt;
     font-style: normal;
     font-weight: normal;
@@ -72,13 +64,9 @@ a{
     color: #62C7FD;
 }
 
-
 .medcin{
     width: 60px;
     height: 60px;
-    /* left:0x;
-    top: 0px; */
-
     border-radius: 50%;
     border: 2px solid#0097E6;
     box-sizing: 10px;
@@ -89,31 +77,102 @@ a{
     margin-right: 10px;
 }
 
-.child-1 {
-    position: absolute;
-    top: 5px;
-    left: 10%;
-  }
-
-  .card {
-    margin-top: 50px;
-    border-bottom: 2px solid #DCDDE1 ;
-    border-top: 2px solid #DCDDE1 ;
-  }
-
   body{
     background: #E5E5E5;
   }
 
-  .docNmbr{
-      color: #3381CC;
+  .d-board{
+    display: flex;                
+    flex-direction: row;           
+    flex-wrap: nowrap;
+    width: 70%;
+    margin-top: 60px;        
   }
 
-  .d-board{
-    width:100%;
-    display:  flex;
-    /* flex-direction: row; */
-     /* flex-wrap: nowrap; */
-    /* margin-left: 120px;
-    margin-top: 90px; */
+  .b_row {
+      width: 27%;
+      margin: 1%;
   }
+
+  .b_card {
+      background-color: #fff;
+      height: 150px;
+      max-width: 300px;
+      border-radius: 10px;
+  }
+
+  .top_card {
+    height: 70%;
+    position: relative;
+    border-bottom: 1px solid #DCDDE1;
+  }
+
+  .bottom_card {
+      height: 29%;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+  }
+
+  .bottom_card button {
+      display: flex;
+      color: #DCDDE1;
+      background-color: transparent;
+      border: none;
+      align-items: center;
+  }
+
+  .bottom_card button p {
+    margin-top: 11px;
+    font-size: 11px;
+  }
+
+  .bottom_card button span {
+      font-size: 36px;
+      margin-bottom: 8px;
+  }
+
+  .med_img {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+  }
+
+  .med_info {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-family: Quando;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px; 
+  }
+
+  .med_nb {
+    float: right;
+    margin-right: 5px;
+    color: #3381CC;
+  }
+
+
+
+  .doct{
+    float:left; 
+    width:180px; 
+    height:160px; 
+}
+.infr{
+    float:left; 
+    width:180px; 
+    height:160px; 
+    margin-left:20px;
+}
+
+.recp{
+    /* float:right;  */
+    width:180px; 
+    height:160px; 
+
+}
+  

@@ -23,52 +23,68 @@ function Loggedin() {
                 </li>
                
             </ul>
-            <div className="d-board">
-                <div className="row">
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="card">
-                            <div className="child-1">
-                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
+
+             <div className="d-board">
+                <div className="b_row">
+                    <div className="b_card">
+                        <div className="top_card">
+                            <div className="med_img">
+                                 <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
                             </div>
-                                <div>
-                                <p className="docNmbr">10</p> 	
+                            <div className="med_info">
+                                <p className="med_nb">10</p> 	
                                 <p><strong>Medecin</strong> </p> 							
-                                </div>
-                                <hr></hr>
                             </div>
-                        
-                    </div>    	
+                        </div>
+                        <div className="bottom_card">
+                            <button>
+                                <span> &#8594;</span>
+                                <p>VOIR</p>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="row">
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="card">
-                            <div className="child-1">
-                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
+
+                <div className="b_row">
+                    <div className="b_card">
+                        <div className="top_card">
+                            <div className="med_img">
+                                 <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'infirmier.png'} />
                             </div>
-                                <div>
-                                <p className="docNmbr">10</p> 	
-                                <p><strong>Medecin</strong> </p> 							
-                                </div>
-                                <hr></hr>
+                            <div className="med_info">
+                                <p className="med_nb">10</p> 	
+                                <p><strong>Infirmier</strong> </p> 							
                             </div>
-                        
-                    </div>    	
+                        </div>
+                        <div className="bottom_card">
+                            <button>
+                                <span> &#8594;</span>
+                                <p>VOIR</p>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="row">
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="card">
-                            <div className="child-1">
-                                <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
+
+                <div className="b_row">
+                    <div className="b_card">
+                        <div className="top_card">
+                            <div className="med_img">
+                                 <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'recpetionniste.jpg'} />
                             </div>
-                                <div>
-                                <p className="docNmbr">10</p> 	
-                                <p><strong>Medecin</strong> </p> 							
-                                </div>
-                                <hr></hr>
+                            <div className="med_info">
+                                <p className="med_nb">10</p> 	
+                                <p><strong>Receptionniste</strong> </p> 							
                             </div>
-                        
-                    </div>    	
-                </div>	
+                        </div>
+                        <div className="bottom_card">
+                            <button>
+                                <span> &#8594;</span>
+                                <p>VOIR</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
             
         </div>
