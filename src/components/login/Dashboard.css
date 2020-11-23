@@ -1,4 +1,33 @@
 
+.base-container-db
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.header-db{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 168px;
+  background: #DCDDE1;
+}
+
+.navBar{
+  width: 80%;
+  margin: 102px 0px;
+}
+
+.adminLogo{
+  width: 20%;
+  height: 155px;
+  border-radius: 50%;
+  border: 2px solid#0097E6;
+  box-sizing: border-box;
+  background-color: brown;
+}
 .tablo {
     /* text-align: center; */
     border-collapse: collapse;

@@ -6,7 +6,28 @@ const http = require('../../http')
 function Dashbd() {
 
 
-  return (<div >
+  return (<div className="base-container-db" >
+        <div className="header-db">
+            <div className="navBar">
+            <ul className=" line nav nav-pills">
+                <li className="nav-item">
+                    <a className="nav-link active" href="#">Accueil</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Medecin</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Infirmier(e)</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Receptionist(e)</a>
+                </li>
+            </ul>
+            </div>
+            <div className="adminLogo">
+
+            </div>
+        </div>
         <div className="filter-container">
             <div className="filter-divs">
               <p className="filter-field">Nom</p>

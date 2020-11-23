@@ -8,8 +8,9 @@ import Dashbd from './components/login/Dashboard';
 function App() {
     return (
       <div className="App">
-        <Login></Login>
+        {/* <Login></Login> */}
        <Dashbd></Dashbd>
+       {/* <Loggedin></Loggedin> */}
        
       </div>
     );
