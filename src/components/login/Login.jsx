@@ -7,6 +7,7 @@ const http = require('../../http')
         const data = {email:email,password:pass}
         const loginUrl = 'https://idbella.herokuapp.com/api/login'
         http('POST', loginUrl, data, (status, response) => {
+            console.log(response)
             if (status === 404)
                 console.log("invalid email/password")
             if (status === 500)
@@ -14,10 +15,15 @@ const http = require('../../http')
             if (status === 400)
                 console.log('invalid request data')
             if (status === 200)
-                console.log(`user ${email} is logged in`)
+            {console.log(`user ${email} is logged in`)
+                http('GET', 'https://idbella.herokuapp.com/api/doctors', {}, (code, value)=>{
+                    console.log(code + ' : ' + value);
+                  })
+            }
+                
             if (status === 401)
                 console.log('an active session is already started [user is logged in]')
-            console.log(response)
+            
         })
     }
 
@@ -60,11 +66,11 @@ function Login(props) {
                     <div className="label-div">
                         <label className="email"   htmlFor="email" >Email Address</label>
                     </div>
-                    <input className="emailInput" id="email" type="text" name="email"></input>
+                    <input className="emailInput" id="email" type="text" name="email" value="modir"></input>
                     <div className="label-div">
                         <label  className="password" htmlFor="password">Password</label>
                     </div>
-                    <input className="passwordInput" id="password" type="password" ></input>
+                    <input className="passwordInput" id="password" type="password" value="admin"></input>
                     <div className="checkBox">
                         <input  type="checkbox"  id="checkbox" name="remember"></input>
                         <label htmlFor="checkbox" >Remember me</label>

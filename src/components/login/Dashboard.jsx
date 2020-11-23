@@ -1,8 +1,11 @@
 import React from "react";
 import './Dashboard.css'
 import Loggedin from "./Loggedin";
+const http = require('../../http')
 
 function Dashbd() {
+
+
   return (<div >
         <div className="filter-container">
             <div className="filter-divs">
@@ -21,8 +24,8 @@ function Dashbd() {
             <button className="btn btn-primary filter-btn" type="submit">Filter</button>
             </div>
         </div>
-        <Loggedin></Loggedin>
-        {/* <div className=" tabl-container ">
+  
+        <div className=" tabl-container ">
             <table className="tablo">
                 <thead>
                   <tr>
@@ -45,27 +48,9 @@ function Dashbd() {
                     <td>Otto</td>
                     <td>@mdo</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
                 </tbody>
               </table>
-</div> */}
+</div>
         </div>);
 }
 
