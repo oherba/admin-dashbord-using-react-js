@@ -6,6 +6,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
 .header-db{
   width: 100%;
   display: flex;
@@ -13,21 +14,36 @@
   flex-wrap: nowrap;
   height: 168px;
   background: #DCDDE1;
+  border-bottom: 2px solid #58BDF3 ;
 }
 
 .navBar{
   width: 80%;
-  margin: 102px 0px;
+  margin: 99px 0px;
 }
 
 .adminLogo{
-  width: 20%;
-  height: 155px;
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   border: 2px solid#0097E6;
   box-sizing: border-box;
-  background-color: brown;
+  position:absolute;
+  right:0px;
+  
 }
+
+.admn{
+  width: 165px;
+  line-height: 155px;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  color: #0D90EF;
+}
+
 .tablo {
     /* text-align: center; */
     border-collapse: collapse;
@@ -52,11 +68,13 @@ th, td {
   }
 
 .filter-container{
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 70%;
+  width: 70%; */
+  margin-left: 60px;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .filter-input{
@@ -80,7 +98,7 @@ th, td {
 
 .filter-btn{
   
-  margin-top : 0%;
+  margin-left : 50px;
 }
 
 
