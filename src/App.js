@@ -1,18 +1,18 @@
 
 import './App.css';
 import Login from './components/login/Login.jsx';
-import Loggedin from './components/login/Loggedin.jsx';
+import Accueil from './components/login/Accueil.jsx';
 import Dashboard from './components/login/Dashboard';
 import Dashbd from './components/login/Dashboard';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
     return (
-      <div className="App">
-        {/* <Login></Login> */}
-       <Dashbd></Dashbd>
-       {/* <Loggedin></Loggedin> */}
-       
-      </div>
+      <Accueil/>
     );
 }
 

@@ -1,30 +1,9 @@
 import React from 'react'
-import './Loggedin.css'
 
-
-function Loggedin() {
+function Cards() {
     return (
-        <div className="base-container">
-            <h1 className="admn">Adminisrateur system</h1>
-            <h3 className="logout">Logged in : Web Admin |<span> Logout</span></h3>
-            <h4 className="bienvenu">Bienvenu Adminisrateur :</h4>
-            <ul className=" line nav nav-pills">
-                <li className="nav-item">
-                    <a className="nav-link active" href="#">Accueil</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Medecin</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Infirmier(e)</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Receptionist(e)</a>
-                </li>
-               
-            </ul>
-
-             <div className="d-board">
+        <div>
+            <div className="d-board">
                 <div className="b_row">
                     <div className="b_card">
                         <div className="top_card">
@@ -86,9 +65,8 @@ function Loggedin() {
                 </div>
               
             </div>
-            
         </div>
     )
 }
 
-export default Loggedin
+export default Cards;

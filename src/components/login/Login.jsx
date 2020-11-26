@@ -51,8 +51,6 @@ const http = require('../../http')
     }
 
 function Login(props) {
-    
-
     return (
         <div className="base-container">
             <div className="split right ">

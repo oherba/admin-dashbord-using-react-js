@@ -1,68 +1,15 @@
 import React from "react";
 import './Dashboard.css'
-import Loggedin from "./Loggedin";
+import Accueil from "./Accueil";
+import Filter from "./Filter";
+
+
 const http = require('../../http')
 
 function Dashbd() {
 getDoctors()
-
   return (<div className="base-container-db" >
-        <div className="header-db">
-            <div className="navBar">
-            <ul className="nav nav-pills">
-                <li className="nav-item">
-                    <a className="nav-link active" href="#">Accueil</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Medecin</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Infirmier(e)</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Receptionist(e)</a>
-                </li>
-            </ul>
-            </div>
-            <div className="adminLogo">
-                <p className="admn">Admin</p>
-            </div>
-        </div>
-        <div className="filter-container">
-          <form className="form-inline">
-              <div className="form-group mr-2">
-                  <label className="sr-only" htmlFor="inputPassword">Password</label>
-                  <input type="text" className="form-control" id="inputPassword" placeholder="Prenom"></input>
-              </div>
-              <div className="form-group mr-2">
-                  <label className="sr-only" for="inputPassword">Password</label>
-                  <input type="text" className="form-control" id="inputPassword" placeholder="Nom"></input>
-              </div>
-              <div className="form-group mr-2">
-                  <label className="sr-only" for="inputPassword">Password</label>
-                  <input type="text" className="form-control" id="inputPassword" placeholder="Service"></input>
-              </div>
-              <button type="submit" className="btn btn-primary filter-btn">Filter</button>
-          </form>
-        </div>
-                {/* <div className="filter-container">
-            <div className="filter-divs">
-              <p className="filter-field">Nom</p>
-              <input className="filter-input" type="text"></input>
-            </div>
-            <div className="filter-divs">
-              <p className="filter-field">Nom</p>
-              <input className="filter-input" type="text"></input>
-            </div>
-            <div className="filter-divs">
-              <p className="filter-field">Nom</p>
-              <input className="filter-input" type="text"></input>
-            </div>
-            <div className="filter-divs">
-            <button className="btn btn-primary filter-btn" type="submit">Filter</button>
-            </div>
-        </div> */}
-  
+      
         <div className=" tabl-container ">
             <table className="tablo">
                 <thead>
