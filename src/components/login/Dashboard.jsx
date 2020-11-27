@@ -7,7 +7,7 @@ import Filter from "./Filter";
 const http = require('../../http')
 
 function Dashbd() {
-getDoctors()
+// getDoctors()
   return (<div className="base-container-db" >
       
         <div className=" tabl-container ">
@@ -38,19 +38,20 @@ getDoctors()
 </div>
         </div>);
 }
+
 let x = true;
-function getDoctors(){
-  if (!x)
-    return ;
-  x=false;
-  http('POST', 'https://idbella.herokuapp.com/api/login', {email:'modir',password:'admin'}, (status, response)=>{
-    console.log('login status : ' + status + ' : ' + response);
-    http('GET', 'https://idbella.herokuapp.com/api/doctors', {}, (status, response)=>{
-      console.log('list status : ' + status + ' : ' + response);
-      //var l = JSON.parse(response);
-      console.log(response);
-    })
-  })
+    function getDoctors(){
+      if (!x)
+        return ;
+      x=false;
+      http('POST', 'https://idbella.herokuapp.com/api/login', {email:'modir',password:'admin'}, (status, response)=>{
+        console.log('login status : ' + status + ' : ' + response);
+        http('GET', 'https://idbella.herokuapp.com/api/doctors', {}, (status, response)=>{
+          console.log('list status : ' + status + ' : ' + response);
+          //var l = JSON.parse(response);
+          console.log(response);
+        })
+      })
 }
 
 
