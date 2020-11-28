@@ -18,7 +18,6 @@ let pathname;
 
 function getClass(page)
 {
-    // pathname = useLocation().pathname;
     console.log("page", page, pathname, page == pathname)
     let itemClass = "nav-link";
     if (page == pathname)
@@ -27,7 +26,6 @@ function getClass(page)
 }
 
 function Accueil(props) {
-    // pathname = useLocation().pathname;
     return (
         <div className="base-container">
             {/* <h1 className="admn">Adminisrateur system</h1>
@@ -41,20 +39,20 @@ function Accueil(props) {
                                 <Link to="/" className={getClass("/")} href="#" >Accueil</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/filter"className={getClass("/filter")} href="#" >Medecin </Link>
+                                <Link to="/doctors"className={getClass("/filter")} href="#" >Medecin </Link>
                             </li> 
                             <li className="nav-item">
-                                <Link to="/filter"className={getClass("/")} href="#" >Infirmier(e) </Link>
+                                <Link to="/nurses"className={getClass("/")} href="#" >Infirmier(e) </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/filter"className={getClass("/")} href="#" >Receptionist(e) </Link>
+                                <Link to="/recept"className={getClass("/")} href="#" >Receptionist(e) </Link>
                             </li>
                         </ul>
                          <Switch>
                             <Route path="/" exact component={Cards}/>
-                            <Route path="/filter" component={Filter}/>
-                            <Route path="/filter" component={Filter}/>
-                            <Route path="/filter" component={Filter}/>
+                            <Route path="/doctors" component={Dashbd}/>
+                            <Route path="/nurses" component={Dashbd}/>
+                            <Route path="/recept" component={Dashbd}/>
                         </Switch>
                     </div>
                 </Router>

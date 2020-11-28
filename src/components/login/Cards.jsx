@@ -2,30 +2,49 @@ import React, { useState } from 'react';
 
 const http = require('../../http')
 
-let receptionists = null
-
-function getrecep()
+function getrecep(setRecp_nbr)
 {
-    let recep_nbr
+    let receptionists = null
     http('GET', 'https://idbella.herokuapp.com/api/receptionists', {}, (code, value)=>{
         if (code === 200)
         {
             receptionists = JSON.parse(value)
-            recep_nbr = receptionists.length
-            console.log("west funct " + recep_nbr)
-            return  recep_nbr
+            setRecp_nbr (receptionists.length)   
         }        
     })
-    //(receptionists.length)
+}
+
+function getDoc(setDoc_nbr)
+{
+    let receptionists = null
+    http('GET', 'https://idbella.herokuapp.com/api/doctors', {}, (code, value)=>{
+        if (code === 200)
+        {
+            receptionists = JSON.parse(value)
+            setDoc_nbr (receptionists.length)   
+        }        
+    })
+}
+
+function getNurs(setNurs_nbr)
+{
+    let receptionists = null
+    http('GET', 'https://idbella.herokuapp.com/api/nurses', {}, (code, value)=>{
+        if (code === 200)
+        {
+            receptionists = JSON.parse(value)
+            setNurs_nbr (receptionists.length)   
+        }        
+    })
 }
 
 function Cards() {
-
-        // getrecep()
-        const [recp_nbr, setRecp_nbr] = useState(getrecep());
-        console.log("logzbi  " + getrecep())
+        const [recep_nbr, setRecp_nbr] = useState(0);
+        getrecep(setRecp_nbr)
         const [doc_nbr, setDoc_nbr] = useState(0);
+        getDoc(setDoc_nbr)
         const [Nurs_nbr, setNurs_nbr] = useState(0);
+        // getNurs(setNurs_nbr)
     return (
         <div>
             <div className="d-board">
@@ -36,7 +55,7 @@ function Cards() {
                                  <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'medcin.png'} />
                             </div>
                             <div className="med_info">
-                                <p className="med_nb">10</p> 	
+                                <p className="med_nb">{doc_nbr}</p> 	
                                 <p><strong>Medecin</strong> </p> 							
                             </div>
                         </div>
@@ -56,7 +75,7 @@ function Cards() {
                                  <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'infirmier.png'} />
                             </div>
                             <div className="med_info">
-                                <p className="med_nb">10</p> 	
+                                <p className="med_nb">{Nurs_nbr}</p> 	
                                 <p><strong>Infirmier</strong> </p> 							
                             </div>
                         </div>
@@ -76,7 +95,7 @@ function Cards() {
                                  <img className="medcin" alt="medcin" src={process.env.PUBLIC_URL + 'recpetionniste.jpg'} />
                             </div>
                             <div className="med_info">
-                                <p className="med_nb" >{recp_nbr}</p> 	
+                                <p className="med_nb" >{ recep_nbr}</p> 	
                                 <p><strong>Receptionniste</strong> </p> 							
                             </div>
                         </div>
