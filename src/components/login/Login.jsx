@@ -1,24 +1,18 @@
 import './Login.css'
 import React, { useState } from 'react';
 import { Redirect, useHistory } from "react-router-dom";
+// import { Route } from 'react-router'
+import {
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Switch,
+  } from 'react-router-dom';
 // import history from "./history";
 
 // let history;
 
 const http = require('../../http')
-
-    // function RdirHome(props) {
-    //     const history = useHistory();
-    //     // const onSubmit = (data, e) => {
-    //     // e.target.reset();
-    //     history.push({
-    //         pathname:  "/",
-    //         // state: {
-    //         //     response: messageFromServer 
-    //         // } 
-    //     })
-    //     // }
-    // }
 
     function login(email, pass)
     {
@@ -32,14 +26,11 @@ const http = require('../../http')
                 console.log('server error try again')
             if (status === 400)
                 console.log('invalid request data')
-            if (status === 200)
+            if (status === 200 || status === 401)
             {
                 console.log(`user ${email} is logged in`);
-                // http('GET', 'https://idbella.herokuapp.com/api/doctors', {}, (code, value)=>{
-                //     console.log(code + ' : ' + value);
-                //   })
 
-                // history.push("/home")
+              window.location = '/home'
                 // console.log("ok")
                 {/* // RdirHome() */}
                 {/* // console.log('Successfully Login'); */}
@@ -54,18 +45,17 @@ const http = require('../../http')
     function click(){
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value
-        // validateInput(email, password, (err) => {
-        //     if (err.email || err.password)
-        //     {
-        //         // if (err.password)
+        validateInput(email, password, (err) => {
+            if (err.email || err.password)
+            {
+                // if (err.password)
 
-        //         // if (err.email)
-        //         console.log("ïnvalid input")
-        //         return
-        //     }
-        //     login(email, password)
-        // })
-        login(email, password)
+                // if (err.email)
+                console.log("ïnvalid input")
+                return
+            }
+            login(email, password)
+        })
     }
 
     function validateInput(email, password, callback)
@@ -76,6 +66,8 @@ const http = require('../../http')
     }
 
     function Login({history}) {
+        console.log('joj mrrat')
+        //login('modir', 'admin');
         // history = useHistory();
         return (
             <div className="base-container">
@@ -100,7 +92,7 @@ const http = require('../../http')
                             <label htmlFor="checkbox" >Remember me</label>
                         </div>
                         <div className="btn-div">
-                            <button  className="sublog" type="button" onClick={() => history.push("/home")} >Login</button>
+                            <button  className="sublog" type="button" onClick={click} >Login</button>
                         </div>
                         
                     </div>

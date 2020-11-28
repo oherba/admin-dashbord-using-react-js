@@ -4,6 +4,12 @@ import Cards from './Cards'
 import Login from './Login'
 import './Dashboard.css'
 
+import {
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Switch,
+  } from 'react-router-dom';
 
 import Filter from './Filter'
 import Dashbd from './Dashboard'
@@ -28,7 +34,7 @@ function Accueil(props) {
             <h3 className="logout">Logged in : Web Admin |<span> Logout</span></h3>
             <h4 className="bienvenu">Bienvenu Adminisrateur :</h4> */}
             <div className="header-db">
-                {/* <Router>
+                <Router>
                     <div className="navBar">
                         <ul className="nav nav-pills">
                             <li className="nav-item">
@@ -49,9 +55,9 @@ function Accueil(props) {
                             <Route path="/filter" component={Filter}/>
                             <Route path="/filter" component={Filter}/>
                             <Route path="/filter" component={Filter}/>
-                        </Switch> *
+                        </Switch>
                     </div>
-                </Router> */}
+                </Router>
                 <div className="adminLogo">
                     <p className="admn">Admin</p>
                 </div>

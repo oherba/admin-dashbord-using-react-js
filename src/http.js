@@ -14,7 +14,7 @@ const qs = require('querystring')
 
 module.exports = (method, url, data, callback) =>{
     var http = new XMLHttpRequest();
-    http.open(method, url, true);
+    http.open(method, url, true); 
     http.withCredentials = true
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
