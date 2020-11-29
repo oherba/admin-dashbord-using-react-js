@@ -35,7 +35,7 @@ function Dashbd() {
 
   // console.log("zbii " + doc_lst)
   if (doc_lst && doc_lst.length === 0)
-    return <p className="no_data"> Il n'y a pas de médecins dans la base de données</p>
+      return <p className="no_data"> Il n'y a pas de médecins dans la base de données</p>
   return (<div className="base-container-db" >
         <Filter/>
         <div className=" tabl-container ">
