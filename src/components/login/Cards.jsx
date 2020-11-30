@@ -44,7 +44,7 @@ function Cards() {
         const [doc_nbr, setDoc_nbr] = useState(0);
         getDoc(setDoc_nbr)
         const [Nurs_nbr, setNurs_nbr] = useState(0);
-        // getNurs(setNurs_nbr)
+        getNurs(setNurs_nbr)
     return (
         <div>
             <div className="d-board">

@@ -13,6 +13,7 @@ import {
 
 import Filter from './Filter'
 import Dashbd from './Dashboard'
+import Register from './Register'
 
 let pathname;
 
@@ -47,12 +48,16 @@ function Accueil(props) {
                             <li className="nav-item">
                                 <Link to="/recept"className={getClass("/")} href="#" >Receptionist(e) </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/register"className={getClass("/")} href="#" >Register</Link>
+                            </li>
                         </ul>
                          <Switch>
                             <Route path="/" exact component={Cards}/>
                             <Route path="/doctors" component={Dashbd}/>
                             <Route path="/nurses" component={Dashbd}/>
                             <Route path="/recept" component={Dashbd}/>
+                            <Route path="/register" component={Register}/>
                         </Switch>
                     </div>
                 </Router>

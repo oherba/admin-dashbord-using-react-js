@@ -3,6 +3,7 @@ import './Dashboard.css'
 import Accueil from "./Accueil";
 import Filter from "./Filter";
 import { within } from "@testing-library/react";
+import Edit from '../Edit'
 
 
 const http = require('../../http')
@@ -20,15 +21,16 @@ function getDocLst(setDoc_lst)
     })
 }
 
-
 const handleDelete = (doc, doc_lst, setDoc_lst) =>{
   console.log("delte hada " + doc.first_name)
   const new_doc_lst = doc_lst.filter(d => d.id !== doc.id)
   console.log (new_doc_lst)
   setDoc_lst(new_doc_lst)
 }
+
 function Dashbd() {
   const [doc_lst, setDoc_lst] = useState(null);
+  const [editor, setEditor] = useState(null)
    useEffect(() => {
     getDocLst(setDoc_lst)
    }, [])
@@ -36,7 +38,8 @@ function Dashbd() {
   // console.log("zbii " + doc_lst)
   if (doc_lst && doc_lst.length === 0)
       return <p className="no_data"> Il n'y a pas de médecins dans la base de données</p>
-  return (<div className="base-container-db" >
+  return (
+      <div className="base-container-db">
         <Filter/>
         <div className=" tabl-container ">
             <table className="tablo">
@@ -59,13 +62,15 @@ function Dashbd() {
                       <td>{doc.first_name}</td>
                       <td>{doc.speciality}</td>
                       <td>{doc.phone}</td>
-                      <td><button className="btn btn-primary" type="submit">Editer</button></td>
+                      <td><Edit/></td>
+                      {/* <td><button onClick={() => setEditor(doc)}>Editer</button></td> */}
                       <td><button onClick={() => handleDelete(doc, doc_lst, setDoc_lst)} className="btn btn-danger btn-sm">Supprimer</button></td>
                     </tr>
                   )) : null}
                 </tbody>
               </table>
-</div>
+        </div>
+        {editor ? <Edit doc={editor} setEditor={setEditor}/> : null}
         </div>);
 }
 

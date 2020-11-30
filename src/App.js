@@ -12,6 +12,7 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
+import Register from './components/login/Register';
 
 function App() {
     return (
@@ -21,8 +22,6 @@ function App() {
           <Route path={"/home"} component={Accueil}/>
         </Switch>
       </BrowserRouter>
-      // <Login/>
-      // <Accueil/>
     );
 }
 
