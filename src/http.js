@@ -17,11 +17,10 @@ module.exports = (method, url, data, callback) =>{
     http.open(method, url, true); 
     http.withCredentials = true
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
     http.onreadystatechange = function() {
         if(http.readyState === 4) {
             callback(this.status, http.responseText)
         }
-    }
+    } 
     http.send(qs.stringify(data));
 }

@@ -29,16 +29,10 @@ const http = require('../../http')
             if (status === 200 || status === 401)
             {
                 console.log(`user ${email} is logged in`);
-
-              window.location = '/home'
-                // console.log("ok")
-                {/* // RdirHome() */}
-                {/* // console.log('Successfully Login'); */}
+                window.location = '/home'
             }
-                
             if (status === 401)
                 console.log('an active session is already started [user is logged in]')
-            
         })
     }
 
