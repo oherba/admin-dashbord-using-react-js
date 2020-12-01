@@ -12,7 +12,7 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
-import Register from './components/login/Register';
+
 
 function App() {
     return (

@@ -4,6 +4,7 @@ import Accueil from "./Accueil";
 import Filter from "./Filter";
 import { within } from "@testing-library/react";
 import Edit from '../Edit'
+import DeleteUser from './DeleteUser'
 
 
 const http = require('../../http')
@@ -16,16 +17,8 @@ function getDocLst(setDoc_lst)
         {
             doc = JSON.parse(value)
             setDoc_lst(doc)
-            // console.log("functionnn "  + doc)
         }        
     })
-}
-
-const handleDelete = (doc, doc_lst, setDoc_lst) =>{
-  console.log("delte hada " + doc.first_name)
-  const new_doc_lst = doc_lst.filter(d => d.id !== doc.id)
-  console.log (new_doc_lst)
-  setDoc_lst(new_doc_lst)
 }
 
 function Dashbd() {
@@ -35,7 +28,6 @@ function Dashbd() {
     getDocLst(setDoc_lst)
    }, [])
 
-  // console.log("zbii " + doc_lst)
   if (doc_lst && doc_lst.length === 0)
       return <p className="no_data"> Il n'y a pas de médecins dans la base de données</p>
   return (
@@ -63,8 +55,7 @@ function Dashbd() {
                       <td>{doc.speciality}</td>
                       <td>{doc.phone}</td>
                       <td><Edit/></td>
-                      {/* <td><button onClick={() => setEditor(doc)}>Editer</button></td> */}
-                      <td><button onClick={() => handleDelete(doc, doc_lst, setDoc_lst)} className="btn btn-danger btn-sm">Supprimer</button></td>
+                      <td><DeleteUser doc={doc} doc_lst= {doc_lst} setDoc_lst={setDoc_lst}/></td>
                     </tr>
                   )) : null}
                 </tbody>

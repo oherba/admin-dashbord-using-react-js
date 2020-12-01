@@ -1,16 +1,12 @@
 import './Login.css'
 import React, { useState } from 'react';
 import { Redirect, useHistory } from "react-router-dom";
-// import { Route } from 'react-router'
 import {
     BrowserRouter as Router,
     Link,
     Route,
     Switch,
   } from 'react-router-dom';
-// import history from "./history";
-
-// let history;
 
 const http = require('../../http')
 
@@ -60,9 +56,7 @@ const http = require('../../http')
     }
 
     function Login({history}) {
-        console.log('joj mrrat')
-        //login('modir', 'admin');
-        // history = useHistory();
+        const [loggedInStatus,setLoggedInStatus] = useState("NOT_LOGGED_IN")
         return (
             <div className="base-container">
                 <div className="split right ">
@@ -76,11 +70,11 @@ const http = require('../../http')
                         <div className="label-div">
                             <label className="email"   htmlFor="email" >Email Address</label>
                         </div>
-                        <input className="emailInput" id="email" type="text" name="email" /*value="modir"*/></input>
+                        <input className="emailInput" id="email" type="text" name="email" ></input>
                         <div className="label-div">
                             <label  className="password" htmlFor="password">Password</label>
                         </div>
-                        <input className="passwordInput" id="password" type="password" /*value="admin"*/></input>
+                        <input className="passwordInput" id="password" type="password"></input>
                         <div className="checkBox">
                             <input  type="checkbox"  id="checkbox" name="remember"></input>
                             <label htmlFor="checkbox" >Remember me</label>

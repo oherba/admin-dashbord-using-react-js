@@ -14,6 +14,7 @@ import {
 import Filter from './Filter'
 import Dashbd from './Dashboard'
 import Register from './Register'
+import Logout from '../Logout'
 
 let pathname;
 
@@ -34,6 +35,7 @@ function Accueil(props) {
             <h4 className="bienvenu">Bienvenu Adminisrateur :</h4> */}
             <div className="header-db">
                 <Router>
+                    
                     <div className="navBar">
                         <ul className="nav nav-pills">
                             <li className="nav-item">
@@ -51,6 +53,9 @@ function Accueil(props) {
                             <li className="nav-item">
                                 <Link to="/register"className={getClass("/")} href="#" >Register</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/logout"className={getClass("/")} href="#" data-target=".bs-example-modal-sm" data-toggle="modal" >Logout</Link>
+                            </li>
                         </ul>
                          <Switch>
                             <Route path="/" exact component={Cards}/>
@@ -58,6 +63,7 @@ function Accueil(props) {
                             <Route path="/nurses" component={Dashbd}/>
                             <Route path="/recept" component={Dashbd}/>
                             <Route path="/register" component={Register}/>
+                            <Route path="/logout" component={Logout}/>
                         </Switch>
                     </div>
                 </Router>
