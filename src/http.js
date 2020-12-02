@@ -15,12 +15,34 @@ const qs = require('querystring')
 module.exports = (method, url, data, callback) =>{
     var http = new XMLHttpRequest();
     http.open(method, url, true); 
-    http.withCredentials = true
+    const token = localStorage.getItem('token');
+    if (token)
+        http.setRequestHeader('Authorization', 'Bearer ' + token);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.setRequestHeader('dataType', 'jsonp');
     http.onreadystatechange = function() {
         if(http.readyState === 4) {
+            try{
+                const response = JSON.parse(this.responseText)
+                if (response.token)
+                    localStorage.setItem('token', response.token)
+            }
+            catch(e){}
             callback(this.status, http.responseText)
         }
-    } 
+    }
     http.send(qs.stringify(data));
 }
+
+// module.exports = (method, url, data, callback) =>{
+//     var http = new XMLHttpRequest();
+//     http.open(method, url, true); 
+//     http.withCredentials = true
+//     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//     http.onreadystatechange = function() {
+//         if(http.readyState === 4) {
+//             callback(this.status, http.responseText)
+//         }
+//     } 
+//     http.send(qs.stringify(data));
+// }
