@@ -19,7 +19,6 @@ module.exports = (method, url, data, callback) =>{
     if (token)
         http.setRequestHeader('Authorization', 'Bearer ' + token);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    http.setRequestHeader('dataType', 'jsonp');
     http.onreadystatechange = function() {
         if(http.readyState === 4) {
             try{

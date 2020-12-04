@@ -2,13 +2,9 @@ import React from 'react'
 const http = require('../http')
 
 const handleLogout = () => {
-    http('DELETE', 'https://idbella.herokuapp.com/api/logout', {}, (code, value)=>{
-        if (code === 200)
-        {
-            console.log ("valueeee" + value)
-            window.location = '/'
-        }        
-    })
+    localStorage.removeItem('token')
+    console.log ("logpouteeeeed")
+     window.location = '/'
 }
 
 function Logout() {

@@ -8,11 +8,16 @@ function Register() {
     const onSubmit = data =>{
         const registerUrl = 'https://idbella.herokuapp.com/api/register'
         http('POST',registerUrl, data, (status, response) =>{
-            if (status === 503)
-                console.log("zbiii la registriti")
-            console.log("zbi" + response)
-        })
-        // console.log( data)
+            if (status === 401)
+                console.log("permission denied")
+            if (status === 300)
+                console.log("email already exist")
+            if (status === 200)
+            {
+                console.log("registred succesfully")
+                
+            }
+            })
     }
     return (
             <div className="bod">
@@ -29,11 +34,17 @@ function Register() {
                         </div>
                         <div className="form-group">
                             <label>Numero</label>
-                            <input name="phone" type="tel" id="phone" name="phone"  className="form-control" placeholder="phone number" ref={register({required : true})} />
+                            <input name="phone" type="tel" id="phone"  className="form-control" placeholder="phone number" ref={register({required : true})} />
                         </div>
                         <div className="form-group">
                             <label>Service</label>
-                            <input name="role"  type="number" className="form-control" placeholder="role"  ref={register({required : true})}/>
+                            <select name="role" className="form-control" placeholder="role"  ref={register({required : true})} >
+                                <option value="1">Admin</option>
+                                <option value="2">Doctor</option>
+                                <option value="3">Nurse</option>
+                                <option value="4">patient</option>
+                                <option value="5">Receptionist</option>
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Email</label>
@@ -41,7 +52,7 @@ function Register() {
                         </div>
                         <div className="form-group">
                             <label>Mot de passe</label>
-                            <input type="password" className="form-control" placeholder="Enter password" />
+                            <input type="password" name="password" className="form-control" placeholder="Enter password"  ref={register({required : true})} />
                         </div>
         
                         <button type="submit" className="btn btn-dark btn-lg btn-block">Ajouter</button>

@@ -16,6 +16,10 @@ function getDocLst(setDoc_lst)
         if (code === 200)
         {
             doc = JSON.parse(value)
+            doc.forEach(doct=>{
+              doct.role = 2;
+            })
+            console.log(doc)
             setDoc_lst(doc)
         }        
     })
@@ -47,21 +51,21 @@ function Dashbd() {
                   </tr>
                 </thead>
                 <tbody>
-                  {doc_lst ? doc_lst.map(doc =>(
+                  {doc_lst ? doc_lst.map((doc,index) =>(
                     <tr key={doc.id}>
                       <td>{doc.id}</td>
                       <td>{doc.last_name}</td>
                       <td>{doc.first_name}</td>
                       <td>{doc.speciality}</td>
                       <td>{doc.phone}</td>
-                      <td><Edit/></td>
+                      <td><Edit doc={doc} index={index} doc_lst= {doc_lst} setDoc_lst={setDoc_lst}/></td>
                       <td><DeleteUser doc={doc} doc_lst= {doc_lst} setDoc_lst={setDoc_lst}/></td>
                     </tr>
                   )) : null}
                 </tbody>
               </table>
         </div>
-        {editor ? <Edit doc={editor} setEditor={setEditor}/> : null}
+        {/* {editor ? <Edit doc={editor} setEditor={setEditor}/> : null} */}
         </div>);
 }
 
