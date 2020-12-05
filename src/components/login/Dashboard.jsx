@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Dashboard.css'
-import Accueil from "./Accueil";
+import '../login/Dashboard.css'
 import Filter from "./Filter";
-import { within } from "@testing-library/react";
-import Edit from '../Edit'
-import DeleteUser from './DeleteUser'
+import Edit from '../edit/Edit'
+import DeleteUser from '../delete/DeleteUser'
 
 
 const http = require('../../http')

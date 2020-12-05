@@ -1,6 +1,6 @@
 import "./Edit.css"
 import { useForm } from "react-hook-form";
-import http from '../http';
+import http from '../../http';
 
 
 

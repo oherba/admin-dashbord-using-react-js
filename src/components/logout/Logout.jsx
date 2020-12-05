@@ -1,5 +1,5 @@
 import React from 'react'
-const http = require('../http')
+const http = require('../../http')
 
 const handleLogout = () => {
     localStorage.removeItem('token')

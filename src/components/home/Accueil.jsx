@@ -1,8 +1,7 @@
 import React from 'react'
 import './Accueil.css'
-import Cards from './Cards'
-import Login from './Login'
-import './Dashboard.css'
+import Cards from '../login/Cards'
+import '../login/Dashboard.css'
 
 import {
     BrowserRouter as Router,
@@ -11,18 +10,17 @@ import {
     Switch,
   } from 'react-router-dom';
 
-import Filter from './Filter'
-import Dashbd from './Dashboard'
-import Register from './Register'
-import Logout from '../Logout'
+import Dashbd from '../login/Dashboard'
+import Register from '../register/Register'
+import Logout from '../logout/Logout.jsx'
 
 let pathname;
 
 function getClass(page)
 {
-    console.log("page", page, pathname, page == pathname)
+    console.log("page", page, pathname, page === pathname)
     let itemClass = "nav-link";
-    if (page == pathname)
+    if (page === pathname)
         itemClass += " active"
     return itemClass;
 }

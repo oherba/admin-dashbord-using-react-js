@@ -1,8 +1,8 @@
 
 import './App.css';
 import Login from './components/login/Login.jsx';
-import Accueil from './components/login/Accueil.jsx';
-import Registerresponse from './components/RegisterResponse.jsx'
+import Accueil from './components/home/Accueil.jsx';
+// import Registerresponse from './components/register/RegisterResponse.jsx'
 
 import {
   BrowserRouter as Router,
@@ -11,8 +11,6 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
-import Edit from './components/Edit';
-import Register from './components/login/Register';
 
 
 function App() {
