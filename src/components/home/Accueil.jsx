@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './Accueil.css'
-import Cards from '../login/Cards'
-import '../login/Dashboard.css'
+import Cards from '../display_data/Cards'
+import '../display_data/Dashboard.css'
 
 import {
     BrowserRouter as Router,
@@ -10,9 +10,10 @@ import {
     Switch,
   } from 'react-router-dom';
 
-import Dashbd from '../login/Dashboard'
+import Dashbd from '../display_data/Dashboard'
 import Register from '../register/Register'
 import Logout from '../logout/Logout.jsx'
+const http = require('../../http')
 
 let pathname;
 
@@ -25,8 +26,46 @@ function getClass(page)
     return itemClass;
 }
 
+function getLst(setNewLst, setLstLen, urlRequest, docLenLst)
+{
+    let lst = null
+    http('GET', urlRequest, {}, (code, value)=>{
+        if (code === 200)
+        {
+            lst = JSON.parse(value)
+            setNewLst (lst)
+            setLstLen (lst.length);
+        }        
+    })
+}
+
 function Accueil(props) {
-    return (
+    const doc_urlLst = "https://idbella.herokuapp.com/api/doctors"
+    const nurses_urlLst = "https://idbella.herokuapp.com/api/nurses"
+    const receptionist_lst_url = "https://idbella.herokuapp.com/api/receptionists"
+
+    const [doc_lst, setDoc_lst] = useState(null);
+    const [nurse_lst, setNurse_lst] = useState(null);
+    const [recep_lst, setRecep_lst] = useState(null);
+
+  
+    const [docLenLst , set_docLenLst] = useState(0);
+    const [nurseLenLst , set_nurseLenLst] = useState(0);
+    const [recepLenLst , set_recepLenLst] = useState(0);
+    // const [isLoading , setIsLoading] = useState(true);
+
+     useEffect(() => {
+        getLst(setDoc_lst, set_docLenLst, doc_urlLst)
+        getLst(setNurse_lst, set_nurseLenLst, nurses_urlLst)
+        getLst(setRecep_lst, set_recepLenLst, receptionist_lst_url)
+   }, [])
+   
+
+  
+
+
+    return /*isLoading ? <h1>loading...</h1> : */(
+       
         <div className="base-container">
             {/* <h1 className="admn">Adminisrateur system</h1>
             <h3 className="logout">Logged in : Web Admin |<span> Logout</span></h3>
@@ -56,10 +95,10 @@ function Accueil(props) {
                             </li>
                         </ul>
                          <Switch>
-                            <Route path="/" exact component={Cards}/>
-                            <Route path="/doctors" component={Dashbd}/>
-                            <Route path="/nurses" component={Dashbd}/>
-                            <Route path="/recept" component={Dashbd}/>
+                            <Route path="/" exact render={(props) => (<Cards {...props}   docs= {docLenLst} nurses={nurseLenLst} receps={recepLenLst} />)}/>
+                            <Route path="/doctors" render={(props) => (<Dashbd {...props} lst={doc_lst}  setLst={setDoc_lst} />)}/>
+                            <Route path="/nurses" render={(props) => (<Dashbd {...props} lst={nurse_lst}  setLst={setNurse_lst} />)}/>
+                            <Route path="/recept" render={(props) => (<Dashbd {...props} lst={recep_lst}  setLst={setRecep_lst} />)}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/logout" component={Logout}/>
                         </Switch>
