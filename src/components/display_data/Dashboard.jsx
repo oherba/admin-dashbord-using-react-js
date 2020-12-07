@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState} from 'react';
 import '../display_data/Dashboard.css'
 import Filter from "../filter/Filter";
 import Edit from '../edit/Edit'
 import DeleteUser from '../delete/DeleteUser'
 
 function Dashbd(props) {
-  let {lst , setLst} = props;
+  let {lst, setLst} = props;
+  const [filtredList , setFiltredList] = useState(lst);
 
-  if (lst && lst.length === 0)
+  if (filtredList && filtredList.length === 0)
       return <p className="no_data"> Il n'y a pas de médecins dans la base de données</p>
   return (
       <div className="base-container-db">
-        <Filter lst={lst} set_lst={setLst}/>
+        <Filter lst={lst} set_lst={setLst} filtredList={filtredList} setFiltredList={setFiltredList}/>
         <div className=" tabl-container ">
             <table className="tablo">
                 <thead>
@@ -26,15 +27,15 @@ function Dashbd(props) {
                   </tr>
                 </thead>
                 <tbody>
-                  {lst ? lst.map((doc,index) =>(
+                  {filtredList ? filtredList.map((doc,index) =>(
                     <tr key={doc.id}>
                       <td>{doc.id}</td>
                       <td>{doc.last_name}</td>
                       <td>{doc.first_name}</td>
                       <td>{doc.speciality}</td>
                       <td>{doc.phone}</td>
-                      <td><Edit doc={doc} index={index} doc_lst= {lst} setDoc_lst={setLst}/></td>
-                      <td><DeleteUser doc={doc} doc_lst= {lst} setDoc_lst={setLst}/></td>
+                      <td><Edit doc={doc} index={index} doc_lst= {filtredList} setDoc_lst={setLst}/></td>
+                      <td><DeleteUser doc={doc} doc_lst= {filtredList} setDoc_lst={setLst}/></td>
                     </tr>
                   )) : null}
                 </tbody>

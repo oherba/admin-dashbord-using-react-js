@@ -18,7 +18,7 @@
     animation: close 1s forwards;
 }
 
-@keyframes go_down {
+/* @keyframes go_down {
     from {margin-top: -350px;}
     to {margin-top: 200px;}
 }
@@ -26,4 +26,4 @@
 @keyframes close {
     from {opacity: 1;}
     to {opacity: 0;}
-}
+} */

@@ -41,12 +41,12 @@ function Edit(props) {
                     <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="exampleModalLabel">Edit profile</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                        </button>
+                        </button> */}
                     </div>
                     <div className="modal-body">
-                    <form className="formati" onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group">
                             <label>Nom</label>
                             <input name="last_name" type="text" className="form-control" placeholder="First name" defaultValue={doc.last_name} ref={register({required : true})} />
