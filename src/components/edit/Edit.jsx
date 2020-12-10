@@ -8,7 +8,7 @@ function Edit(props) {
     let {doc, index, setDoc_lst, doc_lst} = props;
     const {register, handleSubmit } = useForm();
     const onSubmit = data =>{
-        if (data.email == doc.email)
+        if (data.email === doc.email)
             delete data.email
         const updateUrl = 'https://idbella.herokuapp.com/api/admin/users/' + doc.id
         console.log(updateUrl)
@@ -17,7 +17,7 @@ function Edit(props) {
                 console.log("error server")
             if(status === 200)
             {
-                const new_doc_lst =props.doc_lst;
+                const new_doc_lst = props.doc_lst;
                 new_doc_lst[index] = data;
                 console.log(new_doc_lst)
                 setDoc_lst(new_doc_lst);
@@ -30,7 +30,6 @@ function Edit(props) {
        
     }
     const getId = id => `#${id}`;
-    console.log("i" + props.index)
 
     return (
         
