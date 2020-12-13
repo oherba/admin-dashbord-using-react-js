@@ -5,7 +5,7 @@ import Edit from '../edit/Edit'
 import DeleteUser from '../delete/DeleteUser'
 
 function Dashbd(props) {
-  let {lst, setLst} = props;
+  let {lst, type} = props;
   const [filtredList , setFiltredList] = useState(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function Dashbd(props) {
                     <th scope="col">image</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
-                    <th scope="col">Service</th>
+                    {/* <th scope="col">Service</th> */}
                     <th scope="col">Numero</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -41,10 +41,13 @@ function Dashbd(props) {
                 <tbody>
                   {filtredList ? filtredList.map((doc,index) =>(
                     <tr key={doc.id}>
-                      <td>{doc.id}</td>
+                      {/* <td>{doc.id}</td> */}
+                      {/* <td><img  class="img-circle tmnal"  src={process.env.PUBLIC_URL + 'recep.png'} alt="Paris"/></td> */}
+                      <td><img  class="img-circle tmnal"  src={process.env.PUBLIC_URL + 'tabib.png'} alt="Paris"/></td>
+                      {/* <td><img  class="img-circle tmnal"  src={process.env.PUBLIC_URL + 'recepc.png'} alt="Paris"/></td> */}
                       <td>{doc.last_name}</td>
                       <td>{doc.first_name}</td>
-                      <td>{doc.speciality}</td>
+                      {/* <td>{doc.speciality}</td> */}
                       <td>{doc.phone}</td>
                       <td><Edit doc={doc} index={index} doc_lst= {filtredList} setDoc_lst={setFiltredList}/></td>
                       <td><DeleteUser doc={doc} doc_lst= {filtredList} setDoc_lst={setFiltredList}/></td>

@@ -47,6 +47,7 @@ function Accueil(props) {
     const [doc_lst, setDoc_lst] = useState(null);
     const [nurse_lst, setNurse_lst] = useState(null);
     const [recep_lst, setRecep_lst] = useState(null);
+    // const [filtredList , setFiltredList] = useState(lst);
 
   
     const [docLenLst , set_docLenLst] = useState(0);
@@ -96,9 +97,9 @@ function Accueil(props) {
                         </ul>
                          <Switch>
                             <Route path="/" exact render={(props) => (<Cards {...props}   docs= {docLenLst} nurses={nurseLenLst} receps={recepLenLst} />)}/>
-                            <Route path="/doctors" render={(props) => (<Dashbd {...props} lst={doc_lst}  setLst={setDoc_lst} />)}/>
-                            <Route path="/nurses" render={(props) => (<Dashbd {...props} lst={nurse_lst}  setLst={setNurse_lst} />)}/>
-                            <Route path="/recept" render={(props) => (<Dashbd {...props} lst={recep_lst}  setLst={setRecep_lst} />)}/>
+                            <Route path="/doctors" render={(props) => (<Dashbd {...props} type = "doc "lst={doc_lst}  setLst={setDoc_lst} />)}/>
+                            <Route path="/nurses" render={(props) => (<Dashbd {...props} type="nurse" lst={nurse_lst}  setLst={setNurse_lst} />)}/>
+                            <Route path="/recept" render={(props) => (<Dashbd {...props} type="recep" lst={recep_lst}  setLst={setRecep_lst} />)}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/logout" component={Logout}/>
                         </Switch>

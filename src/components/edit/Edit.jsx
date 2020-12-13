@@ -1,6 +1,7 @@
 import "./Edit.css"
 import { useForm } from "react-hook-form";
 import http from '../../http';
+import Edited from "./Edited";
 
 
 
@@ -8,6 +9,7 @@ function Edit(props) {
     let {doc, index, setDoc_lst, doc_lst} = props;
     const {register, handleSubmit } = useForm();
     const onSubmit = data =>{
+        console.log("hanaaaaaa dkhalt")
         if (data.email === doc.email)
             delete data.email
         const updateUrl = 'https://idbella.herokuapp.com/api/admin/users/' + doc.id
@@ -64,7 +66,6 @@ function Edit(props) {
                                 <option value="1">Admin</option>
                                 <option value="2">Doctor</option>
                                 <option value="3">Nurse</option>
-                                <option value="4">patient</option>
                                 <option value="5">Receptionist</option>
                             </select>
                         </div>
@@ -76,12 +77,11 @@ function Edit(props) {
                             <label>Mot de passe</label>
                             <input type="password" name="password" className="form-control" placeholder="Enter password"  defaultValue={doc.password} ref={register({required : true})} />
                         </div>
-        
-                        <button type="submit" className="btn btn-primary btn-lg btn-block">Update</button>
+                        <button type="submit" className="btn btn-primary btn-lg btn-block" >Update</button>
                     </form>
                     </div>
                     <div className="modal-footer">
-                        <button type="submit" className="btn btn-dark btn-lg btn-block" data-dismiss="modal">close</button>
+                        <button className="btn btn-dark btn-lg btn-block" data-dismiss="modal">close</button>
                     </div>
                     </div>
                 </div>

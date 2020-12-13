@@ -59,7 +59,7 @@ const http = require('../../http')
 
         if (localStorage.getItem('token'))
             window.location = '/home'
-        const [loggedInStatus,setLoggedInStatus] = useState("NOT_LOGGED_IN")
+        // const [loggedInStatus,setLoggedInStatus] = useState("NOT_LOGGED_IN")
         return (
             <div className="base-container">
                 <div className="split right ">
